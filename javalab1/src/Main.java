@@ -5,8 +5,8 @@ public class Main {
         Scanner inp = new Scanner(System.in);
         String C_name = inp.nextLine();
         String item_name = new String();
-        Food food = new Food();
-        Beverage beverage = new Beverage();
+        Bills food = new Food();
+        Bills beverage = new Beverage();
         item_name = inp.nextLine();
         // System.out.println(item_name);
         while (item_name.toLowerCase().compareTo("end")!=0){
@@ -34,8 +34,8 @@ public class Main {
         }
         double amt = food.calculate_amt();
         double amt_b = beverage.calculate_amt();
-        double SGST = food.SGST + beverage.SGST;
-        double CGST = food.CGST + beverage.CGST;
+        double SGST = food.get_SGST() + beverage.get_SGST();
+        double CGST = food.get_CGST() + beverage.get_CGST();
         System.out.println("Customer name: " + C_name);
         System.out.println("Amount: Rs. " + (int)(amt + amt_b));
         System.out.println("SGST: Rs. " + (SGST));
